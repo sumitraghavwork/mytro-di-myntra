@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div id="navbar">
+        <div id="left">
+            <div>
+                <a href="">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png">
+            </a>
+            </div>
+            <div>
+            <div> <a href="">MEN</a></div>
+            <div> <a href="">WOMEN</a></div>
+            <div> <a href="">KIDS</a></div>
+            <div> <a href="">HOME LIVING</a></div>
+        </div>
+        </div>
+
+        <div id="right">
+            <div>
+                <input type="text" placeholder="Search for products,brands and more">
+            </div>
+            <div>
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/004/798/846/small/shopping-cart-logo-or-icon-design-vector.jpg">
+            </div>
+        </div>
+    </div>
+    <div id="signup_container">
+    <form>
+        <h2>Sign Up</h2>
+        <label for="">Full Name</label><br />
+        <input id="name" type="text" placeholder="Enter Your Full Name"><br />
+        <label for="">Email</label><br />
+        <input id="mail" type="text" placeholder="Enter Email"><br />
+        <label for="">Password</label><br />
+        <input id="pass" type="text" placeholder="Enter Password"><br />
+       
+        <p>By signing up, I accept the Masai School <a href="https://masaischool.com/terms">Terms of 
+            Services</a> and acknowlwdge the <a href="https://masaischool.com/privacy">Privacy Policy</a>. </p>
+            <input type="submit" value="Sign up">
+           <p>Already have an account? <a href="signin.html">Sign in</a> </p>
+           <link rel="stylesheet" href="">
+</form>
+</div>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",myfunction);
+    let formtag=document.querySelector("form");
+    let userarr=JSON.parse(localStorage.getItem("userdata"))|| [];
+    function myfunction(){
+       event.preventDefault();
+        let obj={
+            name:formtag.name.value,
+            Email:formtag.mail.value,
+            Password:formtag.pass.value
+        }
+        userarr.push(obj)
+        localStorage.setItem('userdata', JSON.stringify(userarr))
+        window.location.replace("signin.html")
+    }
+</script>
