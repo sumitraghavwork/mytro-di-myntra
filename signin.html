@@ -52,7 +52,7 @@
     let userarr=JSON.parse(localStorage.getItem("userdata"))|| [];
     document.querySelector("form").addEventListener("submit",myfunction);
     let formtag=document.querySelector("form");
-   
+   let loggeddetails=JSON.parse(localStorage.getItem("logginName"))||[];
     function myfunction(){
         let flag=false;
         event.preventDefault();
@@ -60,8 +60,9 @@
         let Password=formtag.pass.value;
         userarr.forEach(function(el){    
         if(Email==el.Email&&Password==el.Password){
+            loggeddetails.push(el);
+            localStorage.setItem("logginName",JSON.stringify(loggeddetails));
           flag=true;
-         
     }
         })
         if(flag==false){
