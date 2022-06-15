@@ -1,4 +1,4 @@
-let login_status = localStorage.getItem('loginStatus') || false
+let login_status = JSON.parse(localStorage.getItem('loginStatus')) || false
 
 // login_status check to add signIn/logout function starts here
 if (login_status == true) {
