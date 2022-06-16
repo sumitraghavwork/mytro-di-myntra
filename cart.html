@@ -19,8 +19,6 @@
             <div id="centre">
                 <span><span>BAG</span>------------- <a href="Address.html">ADDRESS</a> ------------- PAYMENT </span>
             </div>
-       
-
         <div id="right">
             <div>
                 <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png">
@@ -58,7 +56,7 @@
 </html>
 
 <script>
-    let cartarr=JSON.parse(localStorage.getItem("items"));
+    let cartarr=JSON.parse(localStorage.getItem("cartData"))||[];
     window.addEventListener("load",function(){
         displaycart(cartarr)
         update()
@@ -72,7 +70,7 @@ function displaycart(cartarr){
         dives.style.marginBottom="10px"
         let divs=document.createElement("div");
         let image=document.createElement("img");
-        image.setAttribute("src",el.img);
+        image.setAttribute("src",el.image_url);
         let name=document.createElement("h3");
         name.innerText=el.name;
         let catagory=document.createElement("p");
@@ -124,31 +122,31 @@ function displaycart(cartarr){
         if(arr[i].quantity==0){
             event.target.parentNode.remove();
         arr.splice(i,1);
-        localStorage.setItem("items",JSON.stringify(arr));
+        localStorage.setItem("cartData",JSON.stringify(arr));
         window.location.reload();
         }
         arr[i].cartprice=arr[i].quantity*(+el.price);
-        localStorage.setItem("items",JSON.stringify(arr));
+        localStorage.setItem("cartData",JSON.stringify(arr));
         window.location.reload();
     }
     //increase item
     function increase(el,i,arr){
         arr[i].quantity++;
         arr[i].cartprice=arr[i].quantity*(+el.price);
-        localStorage.setItem("items",JSON.stringify(arr));
+        localStorage.setItem("cartData",JSON.stringify(arr));
         window.location.reload();
     }
     //remove item
     function removeitem(el,i,arr){
         event.target.parentNode.remove();
         arr.splice(i,1);
-        localStorage.setItem("items",JSON.stringify(arr));
+        localStorage.setItem("cartData",JSON.stringify(arr));
         window.location.reload();
     }
     function update(){
         let items=0;
         let cartvalue=0;
-        let cartarr1=JSON.parse(localStorage.getItem("items"))||[];
+        let cartarr1=JSON.parse(localStorage.getItem("cartData"))||[];
         for(let i=0;i<cartarr1.length;i++){
             items+=cartarr1[i].quantity;
             cartvalue+=cartarr1[i].cartprice;
