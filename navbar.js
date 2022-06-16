@@ -31,13 +31,13 @@ if (login_status == true) {
   signIn.innerText = 'Sign In'
   signIn.addEventListener('click', function () {
     // add anchor here
-    window.location.href = ''
+    window.location.href = 'signin.html'
   })
   let signUp = document.createElement('div')
   signUp.innerText = 'Sign Up'
   signUp.addEventListener('click', function () {
     // add anchor here
-    window.location.href = ''
+    window.location.href = 'signup.html'
   })
   document.getElementById('login_Status').append(signIn, signUp)
 }
