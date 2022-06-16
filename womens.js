@@ -525,12 +525,12 @@ let womensData = [
 
   let filterbrand = document.getElementById("filterbrand");
 
-  let cartLS =JSON.parse(localStorage.getItem("cart-page"))||[]
-
+  // let cartLS =JSON.parse(localStorage.getItem("cart-page"))||[]
+  let cartArr = JSON.parse(localStorage.getItem('cartData')) || []
   function displayProducts(womensData) {
     productscont.innerHTML = "";
 
-    womensData.forEach(function (element) {
+    womensData.forEach(function (element, index) {
       let product = document.createElement("div");
 
       let img = document.createElement("img");
@@ -555,8 +555,7 @@ let womensData = [
       let AddTocart = document.createElement("button");
       AddTocart.innerText = "Add To Cart";
       AddTocart.addEventListener("click", function(){
-
-
+        AddTocartFun(element,index)
       })
       product.append(img, name, pricediv, brand, AddTocart);
       productscont.append(product);
@@ -577,6 +576,7 @@ let womensData = [
 
   function handlepricesort() {
     let sortprice = document.querySelector("#sortprice").value;
+    
     if (sortprice == "LowToHigh") {
       let filter = womensData.sort(function (a, b) {
         return a.price - b.price;
@@ -591,6 +591,21 @@ let womensData = [
     }
   }
 
-  function AddTocartFun(){
-
+  function AddTocartFun(ele){
+    let flag = false
+  for (let i = 0; i < cartArr.length; i++) {
+    if (cartArr[i].name == ele.name) {
+      cartArr[i].quantity++
+      cartArr[i].cartprice = ele.price * cartArr[i].quantity
+      flag = true
+      alert(`Product ${ele.name} Added to Cart ${cartArr[i].quantity} Times`)
+    }
+  }
+  if (!flag) {
+    ele.quantity = 1
+    ele.cartprice = ele.price * ele.quantity
+    cartArr.push(ele)
+    alert(`Product ${ele.name} Added to Cart Succesfuly`)
+  }
+  localStorage.setItem('cartData', JSON.stringify(cartArr))
   }
