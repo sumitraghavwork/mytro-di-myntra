@@ -12,7 +12,7 @@ sumit	    yash	        nirmal	    piyush	    sumit	        nikhil	            ni
 
 Use this key for cartarr/cartData:-
 let cararr=JSON.parse(localstorage.getitem("cartData"))
-Localstorage.setitem("cartData",json.strigify(cartarr))
+Localstorage.setitem("cartData",JSON.strigify(cartarr))
 
 add this login functionality for login page:-
 let login_status = localStorage.getItem('loginStatus') || 'false'
