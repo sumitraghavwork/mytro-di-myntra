@@ -21,7 +21,7 @@ if (login_status == true) {
   cartLogo.innerText = 'Bag'
   cartLogo.addEventListener('click', function () {
     // add anchor tag here
-    window.location.href = ''
+    window.location.href = 'cart.html'
   })
 
   document.getElementById('login_Status').append(user_Name, logOff, cartLogo)
@@ -61,9 +61,9 @@ function verifyLogin() {
     } else if (selected == 'WOMEN') {
       // add anchor here
       window.location.href = ''
-    } else if (elected == 'KIDS') {
+    } else if (selected == 'KIDS') {
       // add anchor here
-      window.location.href = ''
+      window.location.href = 'kids.html'
     } else {
       // add anchor here
       window.location.href = ''

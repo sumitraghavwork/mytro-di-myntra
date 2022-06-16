@@ -1,4 +1,5 @@
 let searchArr = JSON.parse(localStorage.getItem("searchData")) || []
+let cartarr=JSON.parse(localStorage.getItem("cartData"))||[];
 window.addEventListener("load",function(){
   appendData(searchArr)
   getItemCount(searchArr)
@@ -39,21 +40,21 @@ window.addEventListener("load",function(){
   
   function addToCart(ele) {
     let flag = false
-    for (let i = 0; i < searchArr.length; i++) {
-      if (searchArr[i].name == ele.name) {
-        searchArr[i].quantity++
-        searchArr[i].cartprice = ele.price * searchArr[i].quantity
+    for (let i = 0; i < cartarr.length; i++) {
+      if (cartarr[i].name == ele.name) {
+        cartarr[i].quantity++
+        cartarr[i].cartprice = ele.price * cartarr[i].quantity
         flag = true
-        alert(`Product ${ele.name} Added to Cart ${searchArr[i].quantity} Times`)
+        alert(`Product ${ele.name} Added to Cart ${cartarr[i].quantity} Times`)
       }
     }
     if (!flag) {
       ele.quantity = 1
       ele.cartprice = ele.price * ele.quantity
-      searchArr.push(ele)
+      cartarr.push(ele)
       alert(`Product ${ele.name} Added to Cart Succesfuly`)
     }
-    localStorage.setItem('cartData', JSON.stringify(searchArr))
+    localStorage.setItem('cartData', JSON.stringify(cartarr))
   }
   
   function handlesortprice() {

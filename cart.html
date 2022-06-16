@@ -125,14 +125,14 @@ function displaycart(cartarr){
         localStorage.setItem("cartData",JSON.stringify(arr));
         window.location.reload();
         }
-        arr[i].cartprice=arr[i].quantity*(+el.price);
+        arr[i].cartprice=arr[i].quantity*el.price;
         localStorage.setItem("cartData",JSON.stringify(arr));
         window.location.reload();
     }
     //increase item
     function increase(el,i,arr){
         arr[i].quantity++;
-        arr[i].cartprice=arr[i].quantity*(+el.price);
+        arr[i].cartprice=arr[i].quantity*el.price;
         localStorage.setItem("cartData",JSON.stringify(arr));
         window.location.reload();
     }
