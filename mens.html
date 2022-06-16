@@ -46,7 +46,7 @@
     <div id="filtercontainer">
         <div>
             <p style="color:gray;font-size: 16px;">Home / <span style="color: black;font-weight: 700;font-size: 18px;">Men Collection</span></p>
-            <p style="font-size: 20px;font-weight: 700;">Total items: <span>0</span></p>
+            <p style="font-size: 20px;font-weight: 700;">Total items: <span id="count">0</span></p>
         </div>
         <div>
             <h2 style="font-weight:700;">Filters</h2>
@@ -78,26 +78,26 @@
         <div id="left-section">
             <div>
                 <h3 style="font-weight:700;">Categories</h3>
-                <input type="checkbox">
+                <input type="checkbox" id="tshirts" value="tshirts">
                 <span>Tshirts</span><br>
-                <input type="checkbox">
+                <input type="checkbox" id="shoes" value="shoes">
                 <span>Shoes</span><br>
-                <input type="checkbox">
+                <input type="checkbox" id="flips" value="flips">
                 <span>Flipflops</span><br>
-                <input type="checkbox">
+                <input type="checkbox" id="bags" value="bags">
                 <span>Bags</span><br>
-                <input type="checkbox">
+                <input type="checkbox" id="pants" value="pants" >
                 <span>Pants</span><br>
             </div>
             <div>
                 <h3 style="font-weight:700;">Price</h3>
-                <input type="checkbox">
+                <input type="checkbox" id="one" value="">
                 <span>Rs.100 - Rs.400</span><br>
-                <input type="checkbox">
+                <input type="checkbox" id="two">
                 <span>Rs.400 - Rs.1000</span><br>
-                <input type="checkbox">
+                <input type="checkbox" id="three">
                 <span>Rs.1000 - Rs.5000</span><br>
-                <input type="checkbox">
+                <input type="checkbox" id="four">
                 <span>Rs.5000 - Rs.9999</span><br>
             </div>
         </div>
@@ -105,11 +105,10 @@
 
         <!-- Start of the Right Section -->
         <div id="Right-section">
-
+            <!-- Append you cards here -->
         </div>
         <!-- End of the right section -->
     </div>
-
     <!-- End of the Main container -->
 
 </body>
