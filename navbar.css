@@ -96,3 +96,14 @@
   cursor: pointer;
 }
 /* hover attributes */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #invite{
+    visibility: hidden;
+  }
+  
+}
+@media all and (min-width: 320px) and (max-width: 767px) {
+  #invite{
+    visibility: hidden;
+  }
+}

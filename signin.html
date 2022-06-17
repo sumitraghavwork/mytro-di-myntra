@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!-- Navbar -->
+<link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <div id="navbar">
+        <div id="left">
+            <div>
+                <a href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png">
+            </a>
+            </div>
+            <div>
+            <div> <a href="mens.html">MEN</a></div>
+            <div> <a href="womens.html">WOMEN</a></div>
+            <div> <a href="kids.html">KIDS</a></div>
+            <div> <a href="Home&Living.html">HOME LIVING</a></div>
+        </div>
+        </div>
+
+        <div id="right">
+            <div>
+                <input type="text" placeholder="Search for products,brands and more">
+            </div>
+            <div>
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/004/798/846/small/shopping-cart-logo-or-icon-design-vector.jpg">
+            </div>
+        </div>
+    </div>
+    <div id="signin_container">
+        <form>
+            <h2>Sign In</h2>
+            <label for="">Email</label><br />
+            <input id="mail" type="text" placeholder="Enter Email"><br />
+            <label for="">Password</label><br />
+            <input id="pass" type="text" placeholder="Enter Password"><br />
+           
+            <p>By signing in, I accept the Myntra <a href="https://www.myntra.com/termsofuse">Terms of 
+                Services</a> and acknowlwdge the <a href="https://www.myntra.com/faqs#shipping">Privacy Policy</a>. </p>
+                <input type="submit" value="Sign In">
+               <p>Don't have an account? <a href="signup.html">Sign up</a> </p>
+</body>
+</html>
+<script>
+    let userarr=JSON.parse(localStorage.getItem("userdata"))|| [];
+    document.querySelector("form").addEventListener("submit",myfunction);
+    let formtag=document.querySelector("form");
+   let loggeddetails=JSON.parse(localStorage.getItem("logginName"))||[];
+    function myfunction(){
+        let flag=false;
+        event.preventDefault();
+        let Email=formtag.mail.value;
+        let Password=formtag.pass.value;
+        userarr.forEach(function(el){    
+        if(Email==el.Email&&Password==el.Password){
+            loggeddetails.push(el);
+            localStorage.setItem("logginName",JSON.stringify(loggeddetails));
+          flag=true;
+    }
+        })
+        if(flag==false){
+        alert("Incorrect Id or password")
+        window.location.href="signup.html"
+       
+    }  else{
+        alert("Login successfull");
+        localStorage.setItem("loginStatus",true)
+        window.location.href="index.html";
+    }
+    }
+</script>

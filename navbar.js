@@ -1,4 +1,5 @@
-let login_status = JSON.parse(localStorage.getItem('loginStatus')) || true
+
+let login_status = JSON.parse(localStorage.getItem('loginStatus')) || false
 
 // login_status check to add signIn/logout function starts here
 if (login_status == true) {
@@ -26,7 +27,6 @@ if (login_status == true) {
   cartImg.setAttribute('class','wth')
   let cartItems = document.createElement('span')
   cartItems.setAttribute('id', 'cart-items')
-  cartItems.innerText=8
   cartLogo.addEventListener('click', function () {
     // add anchor tag here
     window.location.href = 'cart.html'
