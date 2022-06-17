@@ -1,4 +1,6 @@
-
+window.addEventListener("load",function(){
+  cartItems()
+})
 
 //crausers data and functionality
 let crauser1 = [
@@ -97,3 +99,11 @@ function addProductsGrid(arr,grid) {
   })
 }
 
+function cartItems(){
+  let temp = JSON.parse(localStorage.getItem('cartData')) || []
+  let items=0
+  temp.forEach(function(ele){
+    items+=ele.quantity
+  })
+  document.getElementById("cart-items").innerText=items
+}

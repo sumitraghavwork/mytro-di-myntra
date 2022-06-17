@@ -280,6 +280,7 @@ let cartArr = JSON.parse(localStorage.getItem('cartData')) || []
 window.addEventListener('load', function () {
   appendData(kidsData)
   getItemCount(kidsData)
+  cartItems()
 })
 
 function appendData(arr) {
@@ -441,6 +442,10 @@ discount.forEach(function (ele) {
 })
 
 function cartItems(){
-  let cartArr = JSON.parse(localStorage.getItem('cartData')) || []
-  document.getElementById("cart-items").innerText=cartArr.length
+  let temp = JSON.parse(localStorage.getItem('cartData')) || []
+  let items=0
+  temp.forEach(function(ele){
+    items+=ele.quantity
+  })
+  document.getElementById("cart-items").innerText=items
 }

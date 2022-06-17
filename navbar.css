@@ -52,7 +52,7 @@
 #navbar > div:last-child > div {
   cursor: pointer;
 }
-#navbar > div:last-child > div:last-child {
+#navbar > div:last-child > div:nth-child(3) {
   padding: 4px 10px;
   border-radius: 10px;
   background-color: rgb(230, 161, 161);

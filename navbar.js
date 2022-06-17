@@ -27,6 +27,7 @@ if (login_status == true) {
   cartImg.setAttribute('class','wth')
   let cartItems = document.createElement('span')
   cartItems.setAttribute('id', 'cart-items')
+  cartItems.innerText=0
   cartLogo.addEventListener('click', function () {
     // add anchor tag here
     window.location.href = 'cart.html'

@@ -527,6 +527,9 @@ let womensData = [
 
   // let cartLS =JSON.parse(localStorage.getItem("cart-page"))||[]
   let cartArr = JSON.parse(localStorage.getItem('cartData')) || []
+  window.addEventListener('load', function () {
+    cartItems()
+  })
   function displayProducts(womensData) {
     productscont.innerHTML = "";
 
@@ -608,4 +611,13 @@ let womensData = [
     alert(`Product ${ele.name} Added to Cart Succesfuly`)
   }
   localStorage.setItem('cartData', JSON.stringify(cartArr))
+  cartItems()
+  }
+  function cartItems(){
+    let temp = JSON.parse(localStorage.getItem('cartData')) || []
+    let items=0
+    temp.forEach(function(ele){
+      items+=ele.quantity
+    })
+    document.getElementById("cart-items").innerText=items
   }

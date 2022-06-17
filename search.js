@@ -3,6 +3,7 @@ let cartarr=JSON.parse(localStorage.getItem("cartData"))||[];
 window.addEventListener("load",function(){
   appendData(searchArr)
   getItemCount(searchArr)
+  cartItems()
 })
 function appendData(arr) {
   document.getElementById('item-container').innerHTML = ''
@@ -161,7 +162,11 @@ function appendData(arr) {
     })
   })
   function cartItems(){
-    let cartArr = JSON.parse(localStorage.getItem('cartData')) || []
-    document.getElementById("cart-items").innerText=cartArr.length
+    let temp = JSON.parse(localStorage.getItem('cartData')) || []
+    let items=0
+    temp.forEach(function(ele){
+      items+=ele.quantity
+    })
+    document.getElementById("cart-items").innerText=items
   }
   
