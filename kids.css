@@ -86,7 +86,7 @@
   border-radius: 5px;
 }
 #item-container > div > div > button:hover {
-  color: teal;
+  color: white;
   background-color: red;
   transform: scale(1.1);
 }

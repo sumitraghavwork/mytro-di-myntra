@@ -60,18 +60,18 @@ function verifyLogin() {
       window.location.href = 'mens.html'
     } else if (selected == 'WOMEN') {
       // add anchor here
-      window.location.href = ''
+      window.location.href = 'womens.html'
     } else if (selected == 'KIDS') {
       // add anchor here
       window.location.href = 'kids.html'
     } else {
       // add anchor here
-      window.location.href = ''
+      window.location.href = 'Home&Living.html'
     }
   } else {
     alert('Please Login First')
     // add anchor here
-    window.location.href = ''
+    window.location.href = 'signin.html'
   }
 }
 // products_page linking ends

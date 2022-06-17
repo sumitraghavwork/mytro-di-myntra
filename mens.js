@@ -290,6 +290,8 @@ let mensData=[
   ];
 // This is done by Nirmal
 // displayPage function start
+
+let cartData=JSON.parse(localStorage.getItem("cartData"))||[];
 function displayPage(mensData){
     document.querySelector('#Right-section').innerHTML='';
     for(let i=0;i<mensData.length;i++){

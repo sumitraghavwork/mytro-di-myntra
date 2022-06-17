@@ -76,13 +76,14 @@
     margin-left: 10px;
   }
   button {
-    border-color: rgb(161, 144, 144);
-    border-width: 1px;
+    border:1px solid #ccc;
+    border-radius: 3px;
     margin-left: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 3px 10px;
     cursor: pointer;
+    color: red;
   }
   button:hover {
     color: white;

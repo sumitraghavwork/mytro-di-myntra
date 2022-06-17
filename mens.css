@@ -177,14 +177,17 @@
     color: gray;
   }
   #MainContainer>#Right-section>div>#addtocart{
-    margin-left: 30px;
+    width:30%;
     border-style: none;
-    background-color: #FD913C;
     border-radius: 3px;
     padding: 5px;
+    color: red;
+    border:1px solid #ccc;
+    position: relative;
+  }
+  #MainContainer>#Right-section>div>#addtocart:hover{
+    background-color: red;
     color: white;
-    display: block;
-    margin: auto;
   }
   #MainContainer>#Right-section>div>#brand{
     font-weight: 600;

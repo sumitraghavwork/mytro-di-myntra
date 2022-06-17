@@ -11,13 +11,13 @@
     <div id="navbar">
         <div id="left">
             <div>
-                <a href="">
+                <a href="index.html">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png">
             </a>
             </div>
         </div>
             <div id="centre">
-                <span><span>BAG</span>------------- <a href="Address.html">ADDRESS</a> ------------- PAYMENT </span>
+                <span><span>BAG</span>------------- <a href="Address.html">ADDRESS</a> ------------- <a href="payment.html"> PAYMENT</a> </span>
             </div>
         <div id="right">
             <div>
@@ -73,10 +73,10 @@ function displaycart(cartarr){
         image.setAttribute("src",el.image_url);
         let name=document.createElement("h3");
         name.innerText=el.name;
-        let catagory=document.createElement("p");
-        catagory.innerText=el.catagory;
-        catagory.style.color="gray"
-        catagory.style.fontSize="12px"
+        // let catagory=document.createElement("p");
+        // catagory.innerText=el.catagory;
+        // catagory.style.color="gray"
+        // catagory.style.fontSize="12px"
         let price=document.createElement("p");
         price.innerText="₹"+el.cartprice;
         let quan=document.createElement("div");
@@ -110,7 +110,7 @@ function displaycart(cartarr){
             removeitem(el,index,cartarr)
         })
         
-        quan.append(name,catagory,price,dile,dele);
+        quan.append(name,price,dile,dele);
         divs.append(image,quan)
         dives.append(divs)
         document.querySelector("#product").append(dives);
