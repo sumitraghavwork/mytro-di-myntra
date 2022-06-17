@@ -288,9 +288,7 @@ let mensData=[
       brand: 'Reebok'
     }
   ];
-let cartData=JSON.parse(localStorage.getItem('cartData'))||[];
-
-
+// This is done by Nirmal
 // displayPage function start
 function displayPage(mensData){
     document.querySelector('#Right-section').innerHTML='';
@@ -437,6 +435,7 @@ totalItems(mensData)
 let tshirts=document.querySelector('#tshirts');
 
 tshirts.addEventListener('click',function(){
+
   Tshirts()
 })
 function Tshirts(){
@@ -453,8 +452,6 @@ function Tshirts(){
     totalItems(mensData);
   }
 }
-
-
 let shoes=document.querySelector('#shoes');
 shoes.addEventListener('click',function(){
   Shoes()
@@ -492,6 +489,7 @@ function Flips(){
     totalItems(mensData);
   }
 }
+
 let pants=document.querySelector('#pants');
 pants.addEventListener('click',function(){
   Pants();

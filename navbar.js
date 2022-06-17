@@ -1,4 +1,4 @@
-let login_status = localStorage.getItem('loginStatus') || false
+let login_status = JSON.parse(localStorage.getItem('loginStatus')) || false
 
 // login_status check to add signIn/logout function starts here
 if (login_status == true) {
@@ -21,7 +21,7 @@ if (login_status == true) {
   cartLogo.innerText = 'Bag'
   cartLogo.addEventListener('click', function () {
     // add anchor tag here
-    window.location.href = ''
+    window.location.href = 'cart.html'
   })
 
   document.getElementById('login_Status').append(user_Name, logOff, cartLogo)
@@ -31,13 +31,13 @@ if (login_status == true) {
   signIn.innerText = 'Sign In'
   signIn.addEventListener('click', function () {
     // add anchor here
-    window.location.href = ''
+    window.location.href = 'signin.html'
   })
   let signUp = document.createElement('div')
   signUp.innerText = 'Sign Up'
   signUp.addEventListener('click', function () {
     // add anchor here
-    window.location.href = ''
+    window.location.href = 'signup.html'
   })
   document.getElementById('login_Status').append(signIn, signUp)
 }
@@ -57,14 +57,14 @@ function verifyLogin() {
     let selected = event.target.innerText
     if (selected == 'MEN') {
       // add anchor here
-      window.location.href = ''
+      window.location.href = 'mens.html'
     } else if (selected == 'WOMEN') {
       // add anchor here
       window.location.href = ''
-    } else if (elected == 'KIDS') {
+    } else if (selected == 'KIDS') {
       // add anchor here
-      window.location.href = ''
-      } else {
+      window.location.href = 'kids.html'
+    } else {
       // add anchor here
       window.location.href = ''
     }
