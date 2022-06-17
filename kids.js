@@ -1,14 +1,14 @@
 let kidsData = [
   {
-    image_url:
-      'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/17137550/2022/2/11/b124b0f4-830d-44ed-a669-e8585d66cf4f1644579708683HellcatBoysRoundNeckBlendedCottonTshirt-ComboPackof51.jpg',
-    name: 'Boys Pack Of 5 Typography Printed Bio Finish T-shirt',
-    price: 899,
-    strikedoffprice: 999,
-    discount: 100,
-    brand: 'US-Polo',
-    category: 'Tshirts',
-    gender: 'Boys',
+      image_url:
+        'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/17137550/2022/2/11/b124b0f4-830d-44ed-a669-e8585d66cf4f1644579708683HellcatBoysRoundNeckBlendedCottonTshirt-ComboPackof51.jpg',
+      name: 'Boys Pack Of 5 Typography Printed Bio Finish T-shirt',
+      price: 899,
+      strikedoffprice: 999,
+      discount: 100,
+      brand: 'US-Polo',
+      category: 'Tshirts',
+      gender: 'Boys',
   },
   {
     image_url:
