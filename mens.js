@@ -288,6 +288,7 @@ let mensData=[
       brand: 'Reebok'
     }
   ];
+  cartData=JSON.parse(localStorage.getItem('cartData'))||[];
 // This is done by Nirmal
 // displayPage function start
 function displayPage(mensData){
@@ -319,10 +320,6 @@ function displayPage(mensData){
         addtocart.setAttribute('id','addtocart');
         addtocart.addEventListener('click',function(){
           addToCart(element)
-          
-          
-          
-          
           // if(addToCart(element)===true){
           //   cartData[i].quantity++
 
