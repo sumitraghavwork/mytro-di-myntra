@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 body{
     width: 100%;
@@ -32,15 +33,17 @@ width:100%;
 }
 
 #container>div>img~button{
-   background-color:whitesmoke;
    border: 1px solid #ccc;
    color:red;
    box-sizing: border-box;
    padding: 5px;
-   border-radius: 5px;
-   width: 100px;
+   border-radius: 3px;
+   cursor: pointer;
 }
-
+#container>div>img~button:hover{
+    color: white;
+    background-color: red;
+}
 #container>div>div{
     display: flex;
 }
@@ -61,99 +64,6 @@ width:100%;
   color: red;
   font-size: 15px;
   
-}
-
-/* #container>div>h4{
-  font-weight: lighter;
-}
-
-#container>div>h4:nth-child(4){
-    color:black
-} */
-#nav{
-    width:100%;
-    height: 75px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: sticky;
-    z-index: 9999999;
-    top: 1px;
-    background-color: white;
-}
-#nav>div:nth-child(1)>img{
-    height: 66px;
-}
-#nav img{
-    width:100%;
-    height:100%;
-}
-
-#nav>div:nth-child(8)>img{
-    display: flex;
-    flex-direction: column;
-    width:90%;
-    height:60%;
-   margin-bottom:-5px;
-   margin-right: 10px;
-}
-
-#nav>div{
-   /* border: 1px solid green; */
-   width:auto;
-   height:40px;
-   font-weight: bold;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size:14px;
-   text-align: center;
-   display: flex;
-   align-items: center;
-}
-
-#nav>div:nth-child(6){
-    width:500px;
-    height: 33px;
-    padding-top: 1px; 
-}
-
-#nav input{
-    background-color:rgb(244, 242, 242);
-    width:100%;
-    height: 36px;
-    border: 0px ;
-    border-radius: 5px;
-}
-
-#invite{
-    height: 55px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d4e1fc;
-}
-
-#invite>img{
-  height:50px ;
-}
-
-#invite>p{
-  margin-left: 15px;
-  margin-right: 15px;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: smaller;
-  color: rgb(76, 76, 76);
-}
-#invite>button{
-  height: 30px;
-  width: 100px;
-  color: red;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight:500;
-  border-radius: 5px;
-  border: 1px solid rgb(167, 216, 246);
 }
 #sortbypriceAndName{
     display: flex;

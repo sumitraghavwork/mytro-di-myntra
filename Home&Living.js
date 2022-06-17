@@ -218,16 +218,20 @@
     for (let i = 0; i < cartArr.length; i++) {
         if (cartArr[i].name == ele.name) {
         cartArr[i].quantity++;
-        cartArr[i].cartprice = ele.price * cartArr[i].quantity
+        cartArr[i].cartprice = cartArr[i].price * cartArr[i].quantity
         flag = true
         alert(`Product ${ele.name} Added to Cart ${cartArr[i].quantity} Times`)
         }
     }
     if (!flag) {
         ele.quantity = 1
+        ele.price=Number(ele.price.substring(1,ele.price.length))
         ele.cartprice = ele.price * ele.quantity
         cartArr.push(ele)
         alert(`Product ${ele.name} Added to Cart Succesfully`)
     }
     localStorage.setItem('cartData', JSON.stringify(cartArr))
+            }
+            function Gotohome(){
+                window.location.href="index.html"
             }
