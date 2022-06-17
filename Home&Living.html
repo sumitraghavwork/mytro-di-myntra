@@ -1,130 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Myntra For Kids</title>
-    <link rel="stylesheet" href="kids.css" />
-    <link rel="stylesheet" href="navbar.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home Decor</title>
+    <link rel="stylesheet" href="Home&Living.css" />
+    <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
     <div id="navbar">
-      <div>
-        <img
-          onclick="homePage()"
-          class="wth"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Myntra_logo.png/1200px-Myntra_logo.png"
-          alt="logo"
-        />
-      </div>
-
-      <div id="products_page">
-        <div>MEN</div>
-        <div>WOMEN</div>
-        <div>KIDS</div>
-        <div>HOME & LIVING</div>
-      </div>
-      <div>
-        <input
-          type="text"
-          name="search"
-          id="search-bar"
-          placeholder="Search for products, brands & more"
-        />
-      </div>
-      <div id="login_Status"></div>
+        <div >
+            <img onclick="homePage()" class="wth" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Myntra_logo.png/1200px-Myntra_logo.png" alt="logo">
+        </div>
+        
+        <div id="products_page">
+            <div>MEN</div>
+            <div>WOMEN</div>
+            <div>KIDS</div>
+            <div>HOME & LIVING</div>
+        </div>
+        <div>
+            <input type="text" name="search" id="search-bar" placeholder="Search for products, brands & more">
+        </div>
+        <div id="login_Status">
+        </div>
     </div>
     <div id="invite">
         <div><img src="https://constant.myntassets.com/pwa/assets/img/rupee_illustration.png" alt="">
         </div>
         <div><p>Invite friends to Myntra's EORS & get up to ₹150 MynCash for every person who visits</p>
         </div>
-        <button>Invite Now ></button>        
+        <button>Invite Now</button>        
     </div>
-    <!-- <div id="heading"><h1>Kids Products</h1></div> -->
-    <div id="filter-container">
-      <div>
-        <h5>Home / Kids Wear Store</h5>
-        <span>Total items :</span>
-        <span id="item-count"></span>
-      </div>
-      <div>
-        <div>
-          <select name="price" onChange="handlesortprice()" id="sort_price">
-            <option value="">Sort by Price</option>
-            <option value="ascending">Low to High</option>
-            <option value="descending">High to Low</option>
-          </select>
-        </div>
-        <div>
-          <select name="name" onChange="handlesortname()" id="sort_name">
-            <option value="">Sort by Name</option>
-            <option value="ascending">Ascending</option>
-            <option value="descending">Descending</option>
-          </select>
-        </div>
-        <div>
-          <select name="brand" onChange="handlesortbrand()" id="sort_brand">
-            <option value="">Sort by Brand</option>
-            <option value="US-Polo">US-Polo</option>
-            <option value="Max">Max</option>
-            <option value="YK-Disney">YK-Disney</option>
-            <option value="H&M">H&M</option>
-            <option value="Trends">Trends</option>
-            <option value="Nike">Nike</option>
-            <option value="Polo">Polo</option>
-            <option value="Addidas">Addidas</option>
-            <option value="Reebok">Reebok</option>
-            <option value="RedTape">RedTape</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    <div id="main-container">
-      <div id="checkbox-filters">
-        <!-- checkbox filters selection -->
-        <div id="gender">
-          <h5>GENDER</h5><br>
-          <input type="checkbox" value="Boys" />
-          <span>Boys</span>
-          <br />
-          <input type="checkbox" value="Girls" />
-          <span>Girls</span>
-          <br />
-        </div>
-        <div id="categories">
-          <h5 >CATEGORIES</h5><br>
-          <input type="checkbox" value="Tshirts" />
-          <span>Tshirts</span><br>
-          <input type="checkbox" value="Shirts" />
-          <span>Shirts</span><br>
-          <input type="checkbox" value="Shoes" />
-          <span>Shoes</span><br>
-          <input type="checkbox" value="Dresses" />
-          <span>Dresses</span><br>
-          <input type="checkbox" value="Kurta Sets" />
-          <span>Kurta Sets</span><br>
-        </div>
-        <div id="discount">
-            <h5 >Discount</h5><br>
-            <input type="checkbox" value="10" />
-            <span>>10% off</span><br>
-            <input type="checkbox" value="20" />
-            <span>>20% off</span><br>
-            <input type="checkbox" value="30" />  
-            <span>>30% off</span><br>
-            <input type="checkbox" value="40" />
-            <span>>40% off</span><br>
-            <input type="checkbox" value="50" />
-            <span>>50% off</span><br>
-          </div>
-      </div>
-      <div id="item-container">
-        <!-- add products grid here -->
-      </div>
-    </div>
-    <div id="end-container">
+    <div id="sortbypriceAndName">
+    <select id="sort" onChange="sortByGivenOptions()">
+        <option value="">Sort By: Price & Discount</option>
+        <option value="Ascending">Sort By:Price: Low to High</option>
+        <option value="Descending">Sort By:Price: High to Low</option>
+        <option value="Discount">Sort By: Better Discount</option>
+    </select>
+    <select id="sortNames" onChange="sortByNames()">
+        <option value="">Sort By: Names</option>
+        <option value="Ascending">Sort By:Ascending Order</option>
+        <option value="Descending">Sort By:Descending Order</option>
+    </select>
+    <select id="filter" onChange="filterByGivenOptions()">
+        <option value="">Filter By: Brand</option>
+        <option value="Marvel">Filter By: Brand :Marvel</option>
+        <option value="Aura">Filter By: Brand: Aura</option>
+        <option value="Saral Home">Filter By: Brand: Saral Home</option>
+    </select>
+</div>
+    
+   <div id="container"></div>
+  
+     <div id="end-container">
         <div>
             <table id="table">
                 <thead>
@@ -162,11 +93,9 @@
             <h4>SHOP ONLINE AT MYNTRA WITH COMPLETE CONVENIENCE</h4>
             <p>Another reason why Myntra is the best of all online stores is the complete convenience that it offers. You can view your favourite brands with price options for different products in one place. A user-friendly interface will guide you through your selection process. Comprehensive size charts, product information and high-resolution images help you make the best buying decisions. You also have the freedom to choose your payment options, be it card or cash-on-delivery. The 30-day returns policy gives you more power as a buyer. Additionally, the try-and-buy option for select products takes customer-friendliness to the next level.</p>
         </div>
-
     </div>
-  </body>
+</body>
 </html>
-<script src="kids.js"></script>
-<script src="navbar.js"></script>
-<script src="search-algo.js"></script>
-
+   <script src="Home&Living.js"> </script>
+   <script src="search-algo.js"></script>
+   <script src="navbar.js"></script>

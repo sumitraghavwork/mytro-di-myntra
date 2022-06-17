@@ -13,15 +13,15 @@
     <div id="navbar">
         <div id="left">
             <div>
-                <a href="">
+                <a href="index.html">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png">
             </a>
             </div>
             <div>
-            <div> <a href="">MEN</a></div>
-            <div> <a href="">WOMEN</a></div>
-            <div> <a href="">KIDS</a></div>
-            <div> <a href="">HOME LIVING</a></div>
+            <div> <a href="mens.html">MEN</a></div>
+            <div> <a href="womens.html">WOMEN</a></div>
+            <div> <a href="kids.html">KIDS</a></div>
+            <div> <a href="Home&Living.html">HOME LIVING</a></div>
         </div>
         </div>
 
@@ -42,8 +42,8 @@
             <label for="">Password</label><br />
             <input id="pass" type="text" placeholder="Enter Password"><br />
            
-            <p>By signing in, I accept the Masai School <a href="https://masaischool.com/terms">Terms of 
-                Services</a> and acknowlwdge the <a href="https://masaischool.com/privacy">Privacy Policy</a>. </p>
+            <p>By signing in, I accept the Myntra <a href="https://www.myntra.com/termsofuse">Terms of 
+                Services</a> and acknowlwdge the <a href="https://www.myntra.com/faqs#shipping">Privacy Policy</a>. </p>
                 <input type="submit" value="Sign In">
                <p>Don't have an account? <a href="signup.html">Sign up</a> </p>
 </body>
@@ -52,7 +52,7 @@
     let userarr=JSON.parse(localStorage.getItem("userdata"))|| [];
     document.querySelector("form").addEventListener("submit",myfunction);
     let formtag=document.querySelector("form");
-   
+   let loggeddetails=JSON.parse(localStorage.getItem("logginName"))||[];
     function myfunction(){
         let flag=false;
         event.preventDefault();
@@ -60,17 +60,19 @@
         let Password=formtag.pass.value;
         userarr.forEach(function(el){    
         if(Email==el.Email&&Password==el.Password){
+            loggeddetails.push(el);
+            localStorage.setItem("logginName",JSON.stringify(loggeddetails));
           flag=true;
-         
     }
         })
         if(flag==false){
         alert("Incorrect Id or password")
+        window.location.href="signup.html"
        
     }  else{
         alert("Login successfull");
         localStorage.setItem("loginStatus",true)
-        window.location.href="";
+        window.location.href="index.html";
     }
     }
 </script>

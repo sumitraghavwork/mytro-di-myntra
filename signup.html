@@ -11,15 +11,15 @@
     <div id="navbar">
         <div id="left">
             <div>
-                <a href="">
+                <a href="index.html">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Myntra_logo.png">
             </a>
             </div>
             <div>
-            <div> <a href="">MEN</a></div>
-            <div> <a href="">WOMEN</a></div>
-            <div> <a href="">KIDS</a></div>
-            <div> <a href="">HOME LIVING</a></div>
+            <div> <a href="mens.html">MEN</a></div>
+            <div> <a href="womens.html">WOMEN</a></div>
+            <div> <a href="kids.html">KIDS</a></div>
+            <div> <a href="Home&Living.html">HOME LIVING</a></div>
         </div>
         </div>
 
@@ -42,11 +42,10 @@
         <label for="">Password</label><br />
         <input id="pass" type="text" placeholder="Enter Password"><br />
        
-        <p>By signing up, I accept the Masai School <a href="https://masaischool.com/terms">Terms of 
-            Services</a> and acknowlwdge the <a href="https://masaischool.com/privacy">Privacy Policy</a>. </p>
+        <p>By signing up, I accept the Myntra<a href="https://www.myntra.com/termsofuse">Terms of 
+            Services</a> and acknowlwdge the <a href="https://www.myntra.com/faqs#shipping">Privacy Policy</a>. </p>
             <input type="submit" value="Sign up">
-           <p>Already have an account? <a href="signin.html">Sign in</a> </p>
-           <link rel="stylesheet" href="">
+           <p>Already have an account? <a href="signin.html">Sign in</a></p>
 </form>
 </div>
 </body>
@@ -63,8 +62,19 @@
             Email:formtag.mail.value,
             Password:formtag.pass.value
         }
+        if(obj.name.length<=0){
+           alert("Enter correct name");
+           return;
+        }else if(obj.Email.substring(obj.Email.length-4)!=".com"){
+            alert("Enter correct Email")
+            return;
+        }else if(obj.Password.length<=8){
+            alert("Weak Password:Enter atleast 8 character")
+            return;
+        }
         userarr.push(obj)
-        localStorage.setItem('userdata', JSON.stringify(userarr))
-        window.location.replace("signin.html")
+       localStorage.setItem('userdata', JSON.stringify(userarr))
+       window.location.replace("signin.html")
     }
+    
 </script>
