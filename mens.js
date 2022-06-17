@@ -594,4 +594,4 @@ four.addEventListener('click',function(){
     totalItems(mensData);
   }
 })
-// Price section end
+// Price sectionend
