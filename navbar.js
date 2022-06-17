@@ -1,4 +1,4 @@
-let login_status = localStorage.getItem('loginStatus') || false
+let login_status = JSON.parse(localStorage.getItem('loginStatus')) || true
 
 // login_status check to add signIn/logout function starts here
 if (login_status == true) {
@@ -18,12 +18,20 @@ if (login_status == true) {
   logOff.addEventListener('click', logout)
 
   let cartLogo = document.createElement('div')
-  cartLogo.innerText = 'Bag'
+  let cartImg = document.createElement('img')
+  cartImg.setAttribute(
+    'src',
+    'https://cdn-icons-png.flaticon.com/512/2331/2331970.png',
+  )
+  cartImg.setAttribute('class','wth')
+  let cartItems = document.createElement('span')
+  cartItems.setAttribute('id', 'cart-items')
+  cartItems.innerText=8
   cartLogo.addEventListener('click', function () {
     // add anchor tag here
-    window.location.href = ''
+    window.location.href = 'cart.html'
   })
-
+  cartLogo.append(cartImg,cartItems)
   document.getElementById('login_Status').append(user_Name, logOff, cartLogo)
 } else {
   document.getElementById('login_Status').innerHTML = ''
@@ -31,13 +39,13 @@ if (login_status == true) {
   signIn.innerText = 'Sign In'
   signIn.addEventListener('click', function () {
     // add anchor here
-    window.location.href = ''
+    window.location.href = 'signin.html'
   })
   let signUp = document.createElement('div')
   signUp.innerText = 'Sign Up'
   signUp.addEventListener('click', function () {
     // add anchor here
-    window.location.href = ''
+    window.location.href = 'signup.html'
   })
   document.getElementById('login_Status').append(signIn, signUp)
 }
@@ -57,21 +65,21 @@ function verifyLogin() {
     let selected = event.target.innerText
     if (selected == 'MEN') {
       // add anchor here
-      window.location.href = ''
+      window.location.href = 'mens.html'
     } else if (selected == 'WOMEN') {
       // add anchor here
-      window.location.href = ''
-    } else if (elected == 'KIDS') {
+      window.location.href = 'womens.html'
+    } else if (selected == 'KIDS') {
       // add anchor here
-      window.location.href = ''
+      window.location.href = 'kids.html'
     } else {
       // add anchor here
-      window.location.href = ''
+      window.location.href = 'Home&Living.html'
     }
   } else {
     alert('Please Login First')
     // add anchor here
-    window.location.href = ''
+    window.location.href = 'signin.html'
   }
 }
 // products_page linking ends
