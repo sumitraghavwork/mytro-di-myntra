@@ -288,7 +288,6 @@ function appendData(arr) {
     var card = document.createElement('div')
     var pic = document.createElement('img')
     pic.setAttribute('src', ele.image_url)
-    var carddes = document.createElement('div')
     var des = document.createElement('h4')
     des.innerText = ele.name
     var brand = document.createElement('p')
@@ -310,8 +309,7 @@ function appendData(arr) {
       addToCart(ele)
     })
     addcart.innerText = 'Add to Cart'
-    carddes.append(des, brand, prices, addcart)
-    card.append(pic, carddes)
+    card.append(pic, des, brand, prices, addcart)
     document.getElementById('item-container').append(card)
   })
 }

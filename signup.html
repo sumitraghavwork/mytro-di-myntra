@@ -62,8 +62,19 @@
             Email:formtag.mail.value,
             Password:formtag.pass.value
         }
+        if(obj.name.length<=0){
+           alert("Enter correct name");
+           return;
+        }else if(obj.Email.substring(obj.Email.length-4)!=".com"){
+            alert("Enter correct Email")
+            return;
+        }else if(obj.Password.length<=8){
+            alert("Weak Password:Enter atleast 8 character")
+            return;
+        }
         userarr.push(obj)
-        localStorage.setItem('userdata', JSON.stringify(userarr))
-        window.location.replace("signin.html")
+       localStorage.setItem('userdata', JSON.stringify(userarr))
+       window.location.replace("signin.html")
     }
+    
 </script>

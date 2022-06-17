@@ -64,28 +64,35 @@
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
-#item-container > div > div {
+#item-container > div  {
   width: 100%;
-  height: 170px;
-  padding: 10px;
-  display: flex;
+   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-bottom: 5px;
+  border: 1px solid;
 }
 #item-container > div > img {
   width: 100%;
 }
 
-#item-container > div > div > button {
+#item-container > div > button {
+  width:50%;
   cursor: pointer;
   display: block;
   color: red;
   border: 1px solid #ccc;
   padding: 6px 15px;
   border-radius: 5px;
+  position: relative;
+  bottom: 0px;
+  left:0px;
 }
-#item-container > div > div > button:hover {
+#item-container>div>h4,p,div,button{
+  margin-left: 10px;
+
+}
+#item-container > div > button:hover {
   color: white;
   background-color: red;
   transform: scale(1.1);
