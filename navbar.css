@@ -23,14 +23,16 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  cursor: pointer;
 }
 #navbar > div:first-child {
   width: 10%;
+  cursor: pointer;
 }
 #navbar > div:nth-child(2) {
   width: 40%;
-  /* border: 1px solid coral; */
+}
+#navbar > div:nth-child(2) > div {
+  cursor: pointer;
 }
 #navbar > div:nth-child(3) {
   width: 20%;
@@ -47,11 +49,23 @@
 #navbar > div:last-child {
   width: 15%;
 }
+#navbar > div:last-child > div {
+  cursor: pointer;
+}
+#navbar > div:last-child > div:last-child {
+  padding: 4px 10px;
+  border-radius: 10px;
+  background-color: rgb(230, 161, 161);
+}
 .wth {
   width: auto;
   height: 30px;
 }
-
+#cart-items {
+  font-size: 25px;
+  color: black;
+  margin-left: 10px;
+}
 /* invite bar */
 #invite {
   width: 100%;

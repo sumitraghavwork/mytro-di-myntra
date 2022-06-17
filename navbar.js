@@ -1,3 +1,4 @@
+
 let login_status = JSON.parse(localStorage.getItem('loginStatus')) || false
 
 // login_status check to add signIn/logout function starts here
@@ -18,12 +19,19 @@ if (login_status == true) {
   logOff.addEventListener('click', logout)
 
   let cartLogo = document.createElement('div')
-  cartLogo.innerText = 'Bag'
+  let cartImg = document.createElement('img')
+  cartImg.setAttribute(
+    'src',
+    'https://cdn-icons-png.flaticon.com/512/2331/2331970.png',
+  )
+  cartImg.setAttribute('class','wth')
+  let cartItems = document.createElement('span')
+  cartItems.setAttribute('id', 'cart-items')
   cartLogo.addEventListener('click', function () {
     // add anchor tag here
     window.location.href = 'cart.html'
   })
-
+  cartLogo.append(cartImg,cartItems)
   document.getElementById('login_Status').append(user_Name, logOff, cartLogo)
 } else {
   document.getElementById('login_Status').innerHTML = ''
