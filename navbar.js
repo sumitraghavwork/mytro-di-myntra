@@ -64,7 +64,7 @@ function verifyLogin() {
     } else if (elected == 'KIDS') {
       // add anchor here
       window.location.href = ''
-    } else {
+      } else {
       // add anchor here
       window.location.href = ''
     }

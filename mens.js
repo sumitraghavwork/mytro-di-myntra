@@ -320,14 +320,22 @@ function displayPage(mensData){
         addtocart.innerText='Add to Cart';
         addtocart.setAttribute('id','addtocart');
         addtocart.addEventListener('click',function(){
-          if(addToCart(element)===true){
-            alert('Added to cart already')
-          }
-          else{
-            cartData.push(element)
-            localStorage.setItem('cartData',JSON.stringify(cartData))
-            alert('Added to cart Succefully');
-          }
+          addToCart(element)
+          
+          
+          
+          
+          // if(addToCart(element)===true){
+          //   cartData[i].quantity++
+
+          //   alert('Added to cart already')
+          // }
+          // else{
+          //   element.quantity=1
+          //   cartData.push(element)
+          //   localStorage.setItem('cartData',JSON.stringify(cartData))
+          //   alert('Added to cart Succefully');
+          // }
         })
 
         div.append(img,brand,name,price,sprice,addtocart);
@@ -340,16 +348,32 @@ displayPage(mensData)
 // diaplayPage function end
 
 // Add_to_cart for function
-function addToCart(element){
-  let filtered=cartData.filter(function(elem){
-    return elem.name===element.name
-  }) 
-  if(filtered.length>0){
-    return true
+function addToCart(ele){
+  let flag = false
+  for (let i = 0; i < cartData.length; i++) {
+    if (cartData[i].name == ele.name) {
+      cartData[i].quantity++
+      cartData[i].cartprice = ele.price * cartData[i].quantity
+      flag = true
+      alert(`Product ${ele.name} Added to Cart ${cartData[i].quantity} Times`)
+    }
   }
-  else{
-    return false
+  if (!flag) {
+    ele.quantity = 1
+    ele.cartprice = ele.price * ele.quantity
+    cartData.push(ele)
+    alert(`Product ${ele.name} Added to Cart Succesfuly`)
   }
+  localStorage.setItem('cartData', JSON.stringify(cartData))
+  // let filtered=cartData.filter(function(elem){
+  //   return elem.name===element.name
+  // }) 
+  // if(filtered.length>0){
+  //   return true
+  // }
+  // else{
+  //   return false
+  // }
  }
 
 //filters section
@@ -411,86 +435,163 @@ totalItems(mensData)
 // left filters section
 // categories section start
 let tshirts=document.querySelector('#tshirts');
+
 tshirts.addEventListener('click',function(){
-  let val=document.querySelector('#tshirts').value;
-  let filtered=mensData.filter(function(elem){
-    return elem.type===val
-  })
-  displayPage(filtered);
-  totalItems(filtered);
+  Tshirts()
 })
+function Tshirts(){
+  let val=document.querySelector('#tshirts');
+  if(val.checked===true){
+    let filtered=mensData.filter(function(elem){
+      return elem.type===val.value
+    })
+    displayPage(filtered);
+    totalItems(filtered);
+  }
+  else{
+    displayPage(mensData);
+    totalItems(mensData);
+  }
+}
+
 
 let shoes=document.querySelector('#shoes');
 shoes.addEventListener('click',function(){
-  let val=document.querySelector('#shoes').value;
-  let filtered=mensData.filter(function(elem){
-    return elem.type===val
-  })
-  displayPage(filtered);
-  totalItems(filtered);
+  Shoes()
 })
+function Shoes(){
+  let val=document.querySelector('#shoes');
+  if(val.checked===true){
+    let filtered=mensData.filter(function(elem){
+      return elem.type===val.value
+    })
+    displayPage(filtered);
+    totalItems(filtered);
+  }
+  else{
+    displayPage(mensData);
+    totalItems(mensData);
+  }
+}
 
 let flips=document.querySelector('#flips');
 flips.addEventListener('click',function(){
-  let val=document.querySelector('#flips').value;
-  let filtered=mensData.filter(function(elem){
-    return elem.type===val
-  })
-  displayPage(filtered);
-  totalItems(filtered);
+  Flips();
 })
-
+function Flips(){
+  let val=document.querySelector('#flips');
+  if(val.checked===true){
+    let filtered=mensData.filter(function(elem){
+      return elem.type===val.value
+    })
+    displayPage(filtered);
+    totalItems(filtered);
+  }
+  else{
+    displayPage(mensData);
+    totalItems(mensData);
+  }
+}
 let pants=document.querySelector('#pants');
 pants.addEventListener('click',function(){
-  let val=document.querySelector('#pants').value;
-  let filtered=mensData.filter(function(elem){
-    return elem.type===val
-  })
-  displayPage(filtered);
-  totalItems(filtered);
+  Pants();
 })
-
+function Pants(){
+  let val=document.querySelector('#pants');
+  if(val.checked===true){
+    let filtered=mensData.filter(function(elem){
+      return elem.type===val.value
+    })
+    displayPage(filtered);
+    totalItems(filtered);
+  }
+  else{
+    displayPage(mensData);
+    totalItems(mensData);
+  }
+}
 let bags=document.querySelector('#bags');
 bags.addEventListener('click',function(){
-  let val=document.querySelector('#bags').value;
-  let filtered=mensData.filter(function(elem){
-    return elem.type===val
-  })
-  displayPage(filtered);
-  totalItems(filtered);
+  Bags()
 })
+function Bags(){
+  let val=document.querySelector('#bags');
+  if(val.checked===true){
+    let filtered=mensData.filter(function(elem){
+      return elem.type===val.value
+    })
+    displayPage(filtered);
+    totalItems(filtered);
+  }
+  else{
+    displayPage(mensData);
+    totalItems(mensData);
+  }
+}
 // Categories section end
 
 // Price section start
 let one=document.querySelector('#one');
 one.addEventListener('click',function(){
-  let filtered=mensData.filter(function(elem){
-    return (elem.price>=100 && elem.price<=400)
-  })
-  displayPage(filtered)
+  let val=document.querySelector('#one');
+  if(val.checked===true){
+    let filtered=mensData.filter(function(elem){
+      return (elem.price>=100 && elem.price<=400)
+    })
+    displayPage(filtered);
+    totalItems(filtered);
+  }
+  else{
+    displayPage(mensData);
+    totalItems(mensData);
+  }
 })
 
 let two=document.querySelector('#two');
 two.addEventListener('click',function(){
-  let filtered=mensData.filter(function(elem){
-    return (elem.price>=401 && elem.price<=1000)
-  })
-  displayPage(filtered)
+  let val=document.querySelector('#two');
+  if(val.checked===true){
+    let filtered=mensData.filter(function(elem){
+      return (elem.price>=401 && elem.price<=1000)
+    })
+    displayPage(filtered);
+    totalItems(filtered);
+  }
+  else{
+    displayPage(mensData);
+    totalItems(mensData);
+  }
 })
 
 let three=document.querySelector('#three');
 three.addEventListener('click',function(){
-  let filtered=mensData.filter(function(elem){
-    return (elem.price>=1001 && elem.price<=5000)
-  })
-  displayPage(filtered)
+  let val=document.querySelector('#three');
+  if(val.checked===true){
+    let filtered=mensData.filter(function(elem){
+      return (elem.price>=1001 && elem.price<=5000)
+    })
+    displayPage(filtered);
+    totalItems(filtered);
+  }
+  else{
+    displayPage(mensData);
+    totalItems(mensData);
+  }
 })
 
 let four=document.querySelector('#four');
 four.addEventListener('click',function(){
-  let filtered=mensData.filter(function(elem){
-    return (elem.price>=5001 && elem.price<=10000)
-  })
-  displayPage(filtered)
+  let val=document.querySelector('#four');
+  if(val.checked===true){
+    let filtered=mensData.filter(function(elem){
+      return (elem.price>=5001 && elem.price<=10000)
+    })
+    displayPage(filtered);
+    totalItems(filtered);
+  }
+  else{
+    displayPage(mensData);
+    totalItems(mensData);
+  }
 })
 // Price section end
