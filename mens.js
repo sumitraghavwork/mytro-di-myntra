@@ -288,7 +288,6 @@ let mensData=[
       brand: 'Reebok'
     }
   ];
-  cartData=JSON.parse(localStorage.getItem('cartData'))||[];
 // This is done by Nirmal
 // displayPage function start
 
