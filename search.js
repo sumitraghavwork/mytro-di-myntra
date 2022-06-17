@@ -54,6 +54,7 @@ function appendData(arr) {
     }
     localStorage.setItem('cartData', JSON.stringify(cartarr))
     cartItems();
+
   }
   
   function handlesortprice() {
