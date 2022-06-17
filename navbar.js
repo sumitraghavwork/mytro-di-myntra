@@ -57,7 +57,7 @@ function verifyLogin() {
     let selected = event.target.innerText
     if (selected == 'MEN') {
       // add anchor here
-      window.location.href = ''
+      window.location.href = 'mens.html'
     } else if (selected == 'WOMEN') {
       // add anchor here
       window.location.href = ''

@@ -288,9 +288,7 @@ let mensData=[
       brand: 'Reebok'
     }
   ];
-let cartData=JSON.parse(localStorage.getItem('cartData'))||[];
-
-
+// This is done by Nirmal
 // displayPage function start
 function displayPage(mensData){
     document.querySelector('#Right-section').innerHTML='';
@@ -412,43 +410,63 @@ totalItems(mensData)
 // categories section start
 let tshirts=document.querySelector('#tshirts');
 tshirts.addEventListener('click',function(){
+  Tshirts();
+})
+
+function Tshirts(){
   let val=document.querySelector('#tshirts').value;
   let filtered=mensData.filter(function(elem){
     return elem.type===val
   })
   displayPage(filtered);
   totalItems(filtered);
-})
+  let sortbyname=document.querySelector('#namesort');
+    sortbyname.addEventListener('change',function(){
+        sortByName(filtered)
+    })
+}
 
 let shoes=document.querySelector('#shoes');
 shoes.addEventListener('click',function(){
+  Shoes();
+})
+
+function Shoes(){
   let val=document.querySelector('#shoes').value;
   let filtered=mensData.filter(function(elem){
     return elem.type===val
   })
   displayPage(filtered);
   totalItems(filtered);
-})
+}
 
 let flips=document.querySelector('#flips');
 flips.addEventListener('click',function(){
+  Flips();
+})
+
+function Flips(){
   let val=document.querySelector('#flips').value;
   let filtered=mensData.filter(function(elem){
     return elem.type===val
   })
   displayPage(filtered);
   totalItems(filtered);
-})
+}
 
 let pants=document.querySelector('#pants');
 pants.addEventListener('click',function(){
+  Pants();
+})
+
+function Pants(){
   let val=document.querySelector('#pants').value;
   let filtered=mensData.filter(function(elem){
     return elem.type===val
   })
   displayPage(filtered);
   totalItems(filtered);
-})
+}
 
 let bags=document.querySelector('#bags');
 bags.addEventListener('click',function(){
