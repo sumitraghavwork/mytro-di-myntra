@@ -4,39 +4,37 @@ window.addEventListener("load",function(){
   appendData(searchArr)
   getItemCount(searchArr)
 })
-  function appendData(arr) {
-    document.getElementById('item-container').innerHTML = ''
-    arr.forEach(function (ele) {
-      var card = document.createElement('div')
-      var pic = document.createElement('img')
-      pic.setAttribute('src', ele.image_url)
-      var carddes = document.createElement('div')
-      var des = document.createElement('h4')
-      des.innerText = ele.name
-      var brand = document.createElement('p')
-      brand.innerText = ele.brand
-      var prices = document.createElement('div')
-      var actual = document.createElement('span')
-      actual.innerText = 'Rs. ' + ele.price
-      var marked = document.createElement('span')
-      marked.innerText = 'Rs. ' + ele.strikedoffprice
-      marked.setAttribute('class', 'striked')
-      var discount = document.createElement('span')
-      discount.innerText =
-        ((ele.discount * 100) / ele.strikedoffprice).toFixed(0) + '% off'
-      discount.setAttribute('class', 'discount_label')
-  
-      prices.append(actual, marked, discount)
-      var addcart = document.createElement('button')
-      addcart.addEventListener('click', function () {
-        addToCart(ele)
-      })
-      addcart.innerText = 'Add to Cart'
-      carddes.append(des, brand, prices, addcart)
-      card.append(pic, carddes)
-      document.getElementById('item-container').append(card)
+function appendData(arr) {
+  document.getElementById('item-container').innerHTML = ''
+  arr.forEach(function (ele) {
+    var card = document.createElement('div')
+    var pic = document.createElement('img')
+    pic.setAttribute('src', ele.image_url)
+    var des = document.createElement('h4')
+    des.innerText = ele.name
+    var brand = document.createElement('p')
+    brand.innerText = ele.brand
+    var prices = document.createElement('div')
+    var actual = document.createElement('span')
+    actual.innerText = 'Rs. ' + ele.price
+    var marked = document.createElement('span')
+    marked.innerText = 'Rs. ' + ele.strikedoffprice
+    marked.setAttribute('class', 'striked')
+    var discount = document.createElement('span')
+    discount.innerText =
+      ((ele.discount * 100) / ele.strikedoffprice).toFixed(0) + '% off'
+    discount.setAttribute('class', 'discount_label')
+
+    prices.append(actual, marked, discount)
+    var addcart = document.createElement('button')
+    addcart.addEventListener('click', function () {
+      addToCart(ele)
     })
-  }
+    addcart.innerText = 'Add to Cart'
+    card.append(pic, des, brand, prices, addcart)
+    document.getElementById('item-container').append(card)
+  })
+}
   
   function addToCart(ele) {
     let flag = false
@@ -55,6 +53,8 @@ window.addEventListener("load",function(){
       alert(`Product ${ele.name} Added to Cart Succesfuly`)
     }
     localStorage.setItem('cartData', JSON.stringify(cartarr))
+    cartItems();
+
   }
   
   function handlesortprice() {
@@ -160,4 +160,8 @@ window.addEventListener("load",function(){
       }
     })
   })
+  function cartItems(){
+    let cartArr = JSON.parse(localStorage.getItem('cartData')) || []
+    document.getElementById("cart-items").innerText=cartArr.length
+  }
   
