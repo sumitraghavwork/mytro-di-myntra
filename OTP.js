@@ -1,5 +1,5 @@
 document.querySelector("#submit").addEventListener("click",placeOrder);
-document.querySelector("p").addEventListener("click",resendOTP);
+document.querySelector("input+p").addEventListener("click",resendOTP);
 
 function resendOTP(){
     // window.addEventListener("load",function(){
