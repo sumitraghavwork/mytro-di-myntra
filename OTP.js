@@ -1,6 +1,6 @@
 document.querySelector("#submit").addEventListener("click",placeOrder);
 document.querySelector("input+p").addEventListener("click",resendOTP);
-
+let cartArr = JSON.parse(localStorage.getItem('cartData')) || []
 function resendOTP(){
     // window.addEventListener("load",function(){
     //     console.log(document.querySelector("#otP").value)
@@ -16,6 +16,8 @@ function placeOrder(){
     // }
     if(Otp==123){
         alert("Order Placed Successfully ! Thank You.");
+        cartArr=[]
+        localStorage.setItem("cartData",JSON.stringify(cartArr))
         window.location.href="index.html"
 
     }else if(Otp!=123){
